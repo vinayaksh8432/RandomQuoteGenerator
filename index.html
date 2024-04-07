@@ -5,13 +5,59 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Random Quote Generator</title>
       <script src="https://cdn.tailwindcss.com"></script>
-      <style>
-         @import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
-      </style>
+      <link rel="stylesheet" href="style.css" />
    </head>
-   <body>
-      <div class="title bg-[#c86969] flex">
-         <h1 class="">Random Quote Generator</h1>
+   <body class="bg-gradient-to-r from-cyan-500 to-blue-500">
+      <div
+         class="row relative flex justify-center items-center m-auto flex-col"
+      >
+         <div
+            class="content relative bg-white flex flex-col rounded-xl mt-48 w-5/12 shadow-xl items-center"
+         >
+            <h1 class="text-4xl leading-loose mt-6 font-bold">
+               Quote of the Day
+            </h1>
+            <div class="py-6">
+               <span class="text-3xl px-4">🙶</span>
+               <span class="quote text-2xl">Quote</span>
+               <span class="text-3xl px-4">🙷</span>
+            </div>
+            <h2 class="font-medium mb-5 w-4/6 flex justify-end italic">
+               <span class="mr-3">━</span>
+               <span class="author">Author</span>
+            </h2>
+            <div
+               class="flex border-t-2 space-x-44 w-auto leading-loose py-5 items-center"
+            >
+               <div>
+                  <ul class="flex space-x-4">
+                     <li
+                        class="border-2 border-[#5372ef] rounded-full p-3 cursor-pointer"
+                     >
+                        <img src="img/x.png" alt="" class="w-8" />
+                     </li>
+                     <li
+                        class="border-2 border-[#5372ef] rounded-full p-3 cursor-pointer"
+                     >
+                        <img src="img/facebook.png" alt="" class="w-8" />
+                     </li>
+                     <li
+                        class="border-2 border-[#5372ef] rounded-full p-3 cursor-pointer"
+                     >
+                        <img src="img/insta.png" alt="" class="w-8" />
+                     </li>
+                  </ul>
+               </div>
+               <div class="button font-bold">
+                  <button
+                     class="border rounded-full px-6 py-1 bg-[#5372ef] text-white hover:bg-blue-600"
+                  >
+                     New Quote
+                  </button>
+               </div>
+            </div>
+         </div>
       </div>
    </body>
+   <script src="script.js"></script>
 </html>
