@@ -1,3 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 body{font-family: "Josefin Sans", sans-serif;}
+
+.select button{
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.select button:hover{
+    transition: 0.5s ease;
+    background: #5372ef;
+    color: #fff;
+}

@@ -3,7 +3,7 @@ const quote = document.querySelector(".quote");
 const author = document.querySelector(".author");
 
 function getQuote() {
-   let api = `https://api.quotable.io/random?maxLength=45`;
+   let api = `https://api.quotable.io/random`;
    fetch(api)
       .then(function (response) {
          return response.json();

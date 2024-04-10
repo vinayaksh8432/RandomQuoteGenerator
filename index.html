@@ -7,54 +7,60 @@
       <script src="https://cdn.tailwindcss.com"></script>
       <link rel="stylesheet" href="style.css" />
    </head>
-   <body class="bg-gradient-to-r from-cyan-500 to-blue-500">
+   <body
+      class="h-screen bg-[radial-gradient(at_50%_50%,rgba(143,187,241,1)_0%,rgba(255,255,255,0.00)_100%)]"
+   >
       <div
-         class="row relative flex justify-center items-center m-auto flex-col"
+         class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white flex flex-col rounded-xl w-1/2 min-h-[50%] py-10 px-16 shadow-xl justify-center"
       >
+         <h1 class="text-4xl leading-loose font-bold text-center">
+            Quote of the Day
+         </h1>
          <div
-            class="content relative bg-white flex flex-col rounded-xl mt-48 w-5/12 shadow-xl items-center"
+            class="flex min-h-44 py-6 text-center items-center justify-center"
          >
-            <h1 class="text-4xl leading-loose mt-6 font-bold">
-               Quote of the Day
-            </h1>
-            <div class="py-6">
-               <span class="text-3xl px-4">🙶</span>
-               <span class="quote text-2xl">Quote</span>
-               <span class="text-3xl px-4">🙷</span>
+            <span class="text-3xl px-4">🙶</span>
+            <span class="quote text-2xl">Quote</span>
+            <span class="text-3xl px-4">🙷</span>
+         </div>
+         <div class="font-medium py-4 italic flex justify-end">
+            <span class="mr-3">━</span>
+            <span class="author">Author</span>
+         </div>
+         <div
+            class="flex border-t-2 w-full leading-loose pt-5 justify-between items-center"
+         >
+            <div>
+               <ul class="flex space-x-4">
+                  <a href="https://twitter.com/">
+                     <li
+                        class="border-2 border-[#5372ef] rounded-full p-3 cursor-pointer"
+                     >
+                        <img src="img/x.png" alt="" class="w-6" />
+                     </li>
+                  </a>
+                  <a href="https://www.facebook.com/">
+                     <li
+                        class="border-2 border-[#5372ef] rounded-full p-3 cursor-pointer"
+                     >
+                        <img src="img/facebook.png" alt="" class="w-6" />
+                     </li>
+                  </a>
+                  <a href="https://www.instagram.com/">
+                     <li
+                        class="border-2 border-[#5372ef] rounded-full p-3 cursor-pointer"
+                     >
+                        <img src="img/insta.png" alt="" class="w-6" />
+                     </li>
+                  </a>
+               </ul>
             </div>
-            <h2 class="font-medium mb-5 w-4/6 flex justify-end italic">
-               <span class="mr-3">━</span>
-               <span class="author">Author</span>
-            </h2>
-            <div
-               class="flex border-t-2 space-x-44 w-auto leading-loose py-5 items-center"
-            >
-               <div>
-                  <ul class="flex space-x-4">
-                     <li
-                        class="border-2 border-[#5372ef] rounded-full p-3 cursor-pointer"
-                     >
-                        <img src="img/x.png" alt="" class="w-8" />
-                     </li>
-                     <li
-                        class="border-2 border-[#5372ef] rounded-full p-3 cursor-pointer"
-                     >
-                        <img src="img/facebook.png" alt="" class="w-8" />
-                     </li>
-                     <li
-                        class="border-2 border-[#5372ef] rounded-full p-3 cursor-pointer"
-                     >
-                        <img src="img/insta.png" alt="" class="w-8" />
-                     </li>
-                  </ul>
-               </div>
-               <div class="button font-bold">
-                  <button
-                     class="border rounded-full px-6 py-1 bg-[#5372ef] text-white hover:bg-blue-600"
-                  >
-                     New Quote
-                  </button>
-               </div>
+            <div class="button font-bold">
+               <button
+                  class="border rounded-full px-6 py-1 bg-[#5372ef] text-white hover:bg-blue-600"
+               >
+                  New Quote
+               </button>
             </div>
          </div>
       </div>
