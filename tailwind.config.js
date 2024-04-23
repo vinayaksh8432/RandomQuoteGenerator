@@ -5,7 +5,7 @@ module.exports = {
       extend: {
          fontFamily: {
             lilita: ['"Lilita One"', "sans-serif"],
-         },
+         }, 
       },
    },
    plugins: [],
