@@ -2,6 +2,9 @@ const quote = document.querySelector(".quote");
 const author = document.querySelector(".author");
 const loading = document.getElementById("loadingspinner");
 const quoteContainer = document.getElementById("quoteContainer");
+const copyButton = document.querySelector(".copy");
+
+copyButton.addEventListener("click", copy);
 
 var circularCursor = document.getElementById("circularcursor"),
    cursorScale = document.querySelectorAll(".cursorScale");
@@ -12,8 +15,10 @@ window.addEventListener("mousemove", function (e) {
    circularCursor.style.top = e.pageY + "px";
 });
 
-document.addEventListener("click", function () {
-   getQuote();
+document.addEventListener("click", function (e) {
+   if (e.target.tagName !== "IMG" && e.target.tagName !== "P") {
+      getQuote();
+   }
 });
 
 async function getQuote() {
@@ -53,3 +58,33 @@ cursorScale.forEach((link) => {
       cursorText.style.display = "none";
    });
 });
+
+function copy() {
+   const textToCopy = `${quote.textContent}`.trim();
+
+   const tempInput = document.createElement("textarea");
+   tempInput.value = textToCopy;
+   document.body.appendChild(tempInput);
+   tempInput.select();
+   document.execCommand("copy");
+   document.body.removeChild(tempInput);
+
+   const copyShowDiv = document.querySelector(".copy");
+   const copiedDiv = document.querySelector(".copied");
+
+   const copyShowDisplay = window
+      .getComputedStyle(copyShowDiv)
+      .getPropertyValue("display");
+
+   if (copyShowDisplay === "flex") {
+      copyShowDiv.style.display = "none";
+      copiedDiv.style.display = "flex";
+      setTimeout(() => {
+         copyShowDiv.style.display = "flex";
+         copiedDiv.style.display = "none";
+      }, 3000);
+   } else {
+      copyShowDiv.style.display = "flex";
+      copiedDiv.style.display = "none";
+   }
+}
