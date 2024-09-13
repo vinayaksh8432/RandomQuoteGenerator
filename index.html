@@ -1,93 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Random Quote Generator</title>
-      <script src="https://cdn.tailwindcss.com"></script>
-      <link rel="stylesheet" href="style.css" />
-      <link rel="icon" href="img/quote.svg" />
-   </head>
-   <body
-      class="relative bg-[radial-gradient(at_50%_50%,rgba(143,187,241,1)_0%,rgba(255,255,255,0.00)_100%)] overflow-hidden"
-   >
-      <div
-         class="hidden bg-[#81aaff] h-32 w-32 -mt-16 -ml-16 rounded-full absolute z-10 items-center justify-center text-center mix-blend-difference border-none pointer-events-none transition-transform ease-in"
-         id="circularcursor"
-      >
-         <div id="cursorText" class="text-white">get quote</div>
-      </div>
-      <div class="absolute top-5 left-14 cursorScale">
-         <h1 class="text-2xl"><a href="/">quote generator</a></h1>
-      </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Random Quote Generator</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="img/quote.svg" />
+    </head>
+    <body
+        class="relative bg-[radial-gradient(at_50%_50%,rgba(143,187,241,1)_0%,rgba(255,255,255,0.00)_100%)] overflow-hidden"
+    >
+        <div
+            class="hidden bg-[#81aaff] h-32 w-32 -mt-16 -ml-16 rounded-full absolute z-10 items-center justify-center text-center mix-blend-difference border-none pointer-events-none transition-transform ease-in"
+            id="circularcursor"
+        >
+            <div id="cursorText" class="text-white">get quote</div>
+        </div>
+        <div class="absolute top-5 left-14 cursorScale">
+            <h1 class="text-2xl"><a href="/">quote generator</a></h1>
+        </div>
 
-      <div class="h-[100vh] flex justify-center items-center flex-col">
-         <div id="loadingspinner">
-            <div
-               class="fixed top-0 right-0 h-full w-full z-50 flex justify-center items-center"
-            >
-               <div
-                  class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-600"
-               ></div>
+        <div class="h-[100vh] flex justify-center items-center flex-col">
+            <div id="loadingspinner">
+                <div
+                    class="fixed top-0 right-0 h-full w-full z-50 flex justify-center items-center"
+                >
+                    <div
+                        class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-600"
+                    ></div>
+                </div>
             </div>
-         </div>
-         <div class="w-4/5" id="quoteContainer">
-            <div class="flex justify-end pb-10">
-               <div class="copy flex">
-                  <img
-                     class="h-5 cursorScale cursor-pointer"
-                     src="img/clipboard.png"
-                     alt=""
-                  />
-                  <p class="pl-2 text-sm pt-1 cursorScale cursor-pointer">
-                     Copy Quote
-                  </p>
-               </div>
-               <div class="copied hidden">
-                  <div class="flex">
-                     <img src="img/copied.png" alt="" />
-                     <p class="pl-2 text-sm pt-1 cursorScale cursor-pointer">
-                        Copied
-                     </p>
-                  </div>
-               </div>
+            <div class="w-4/5" id="quoteContainer">
+                <div class="flex justify-end pb-10">
+                    <div class="copy flex">
+                        <img
+                            class="h-5 cursorScale cursor-pointer"
+                            src="img/clipboard.png"
+                            alt=""
+                        />
+                        <p class="pl-2 text-sm pt-1 cursorScale cursor-pointer">
+                            Copy Quote
+                        </p>
+                    </div>
+                    <div class="copied hidden">
+                        <div class="flex">
+                            <img src="img/copied.png" alt="" />
+                            <p
+                                class="pl-2 text-sm pt-1 cursorScale cursor-pointer"
+                            >
+                                Copied
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex text-left">
+                    <span class="fontSize align-super -mt-[25px]"
+                        >❛❛&nbsp;</span
+                    >
+                    <span
+                        class="quote 2xl:leading-[7.75rem] xl:leading-[7rem] lg:leading-[6.25rem] md:leading-[6rem] sm:[5rem] fontSize"
+                        >Quote</span
+                    >
+                </div>
+                <div
+                    class="flex items-center justify-end font-medium py-4italic"
+                >
+                    <div class="cursorScale">
+                        <span class="authorName mr-3">━</span>
+                        <span class="authorName author text-2xl">Author</span>
+                    </div>
+                </div>
             </div>
-            <div class="flex text-left">
-               <span class="fontSize align-super -mt-[25px]">❛❛&nbsp;</span>
-               <span
-                  class="quote 2xl:leading-[7.75rem] xl:leading-[7rem] lg:leading-[6.25rem] md:leading-[6rem] sm:[5rem] fontSize"
-                  >Quote</span
-               >
-            </div>
-            <div class="flex items-center justify-end font-medium py-4italic">
-               <div class="cursorScale">
-                  <span class="authorName mr-3">━</span>
-                  <span class="authorName author text-2xl">Author</span>
-               </div>
-            </div>
-         </div>
-      </div>
+        </div>
 
-      <div class="absolute bottom-5 left-14 pt-5 pr-5 cursorScale">
-         <ul class="flex justify-between items-center">
-            <a href="https://twitter.com/" target="_blank">
-               <li class="cursor-pointer">
-                  <img src="img/x.svg" alt="" class="w-6" />
-               </li>
-            </a>
-            <a href="https://www.facebook.com/" target="_blank">
-               <li class="mx-5 cursor-pointer">
-                  <img src="img/facebook.svg" alt="" class="w-6" />
-               </li>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank">
-               <li class="cursor-pointer">
-                  <img src="img/insta.svg" alt="" class="w-7" />
-               </li>
-            </a>
-         </ul>
-      </div>
-      <div></div>
-   </body>
-   <script src="script.js"></script>
+        <div class="absolute bottom-5 left-14 pt-5 pr-5 cursorScale">
+            <ul class="flex justify-between items-center">
+                <a href="https://twitter.com/" target="_blank">
+                    <li class="cursor-pointer">
+                        <img src="img/x.svg" alt="" class="w-6" />
+                    </li>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <li class="mx-5 cursor-pointer">
+                        <img src="img/facebook.svg" alt="" class="w-6" />
+                    </li>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <li class="cursor-pointer">
+                        <img src="img/insta.svg" alt="" class="w-7" />
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <div></div>
+    </body>
+    <script src="script.js"></script>
 </html>
